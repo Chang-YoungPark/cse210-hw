@@ -71,5 +71,14 @@ class Program
         }
 
         Console.WriteLine($"Your Grade is {letter}{letter_grade}: {user_grade}"); 
+
+        if (num_grade > 70)
+        {
+            Console.WriteLine("You Passed!");
+        }
+        else
+        {
+            Console.WriteLine("Try Again!");
+        }
     }
 }
