@@ -1,3 +1,4 @@
+// entry class
 public class Entry
 {
     public string _journalDate;
@@ -12,6 +13,7 @@ public class Entry
 
 }
 
+// menu option 
 public class Menu
 {
     public string _userAnswer = "";   
