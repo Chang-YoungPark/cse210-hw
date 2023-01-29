@@ -22,7 +22,7 @@ class Program
 
         while (userName == "")
         { 
-            Console.Write("What is your name?");
+            Console.Write("What is your journal name? ");
             userName = Console.ReadLine();        
         }
         newJournal._journalFile = userName + ".txt";
@@ -59,7 +59,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Finish Journal!");
+                Console.WriteLine($"Finish Journal! {newJournal._journalFile}");
             }        
         }
     }       

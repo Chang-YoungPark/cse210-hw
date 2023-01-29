@@ -18,7 +18,7 @@ public class Journal
 
     public void SaveToFile()
     {
-        Console.WriteLine("Save To File!");
+        Console.WriteLine($"Save To File! {_journalFile}");
         using (StreamWriter saveFile = new StreamWriter(_journalFile))
         {
             foreach(Entry entry in _entries)
@@ -31,7 +31,7 @@ public class Journal
     
     public void LoadToFile()
     {
-        Console.WriteLine("Load To File!");
+        Console.WriteLine($"Load To File! {_journalFile}");
         string[] readData = System.IO.File.ReadAllLines(_journalFile);
 
         foreach (string line in readData)
