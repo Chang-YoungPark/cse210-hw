@@ -7,10 +7,6 @@ public class Journal
     public string _journalFile;
     public List<Entry> _entries = new List<Entry>();
 
-    public void AddEntry()
-    {
-        
-    }
 
     public void Display()
     {
@@ -22,10 +18,12 @@ public class Journal
 
     public void SaveToFile()
     {
+        Console.WriteLine("Save To File!");
         using (StreamWriter saveFile = new StreamWriter(_journalFile))
         {
             foreach(Entry entry in _entries)
             {
+                Console.WriteLine($"{entry._journalDate}^{entry._ramdomPrompt}^{entry._journalData}");
                 saveFile.WriteLine($"{entry._journalDate}^{entry._ramdomPrompt}^{entry._journalData}");
             }
         }
@@ -33,6 +31,7 @@ public class Journal
     
     public void LoadToFile()
     {
+        Console.WriteLine("Load To File!");
         string[] readData = System.IO.File.ReadAllLines(_journalFile);
 
         foreach (string line in readData)

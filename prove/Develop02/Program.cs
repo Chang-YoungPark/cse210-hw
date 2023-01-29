@@ -7,23 +7,32 @@ class Program
     {
         int userNum = -1; 
         int index ;
+        string answer = "";
         string userValue = "";   
         string promptQuestion = "";   
-        string answer = "";
+        string userName = "";
+
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();    
         
-        Menu menu = new Menu();
-        List<Entry> entry = new List<Entry>();
-        
+        Menu menu = new Menu();       
         PromptGenerator prompts = new PromptGenerator();
         Random random = new Random(); 
+        Journal newJournal = new Journal();
+
+        while (userName == "")
+        { 
+            Console.Write("What is your name?");
+            userName = Console.ReadLine();        
+        }
+        newJournal._journalFile = userName + ".txt";
 
         while ( userNum != 5 )
         {            
             menu.Display(); 
             userValue = menu._userAnswer;
             userNum = int.Parse(userValue);
+
 
             if ( userNum == 1 )    
             {                
@@ -34,23 +43,19 @@ class Program
                 writeEntry._journalDate = dateText;
                 writeEntry._ramdomPrompt = promptQuestion;
                 writeEntry._journalData = answer;
-                entry.Add(writeEntry);          
-              
+                newJournal._entries.Add(writeEntry);        
             }
             else if ( userNum == 2)
-            {                
-                Journal journal = new Journal();
-                journal.Display();
+            {             
+                newJournal.Display();
             }
             else if ( userNum == 3)
-            {
-                Journal journal = new Journal();
-                journal.SaveToFile();
+            {               
+                newJournal.LoadToFile();
             }
             else if ( userNum == 4)
             {
-                Journal journal = new Journal();
-                journal.LoadToFile();
+                newJournal.SaveToFile();
             }
             else
             {
