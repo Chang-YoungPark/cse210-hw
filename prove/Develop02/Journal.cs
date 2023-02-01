@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 public class Journal
 {
+    //property
     public string _journalFile;
     public List<Entry> _entries = new List<Entry>();
 
-
+    //method
     public void Display()
     {
         foreach(Entry entry in _entries)
