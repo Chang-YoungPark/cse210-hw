@@ -4,32 +4,59 @@ using System.Collections.Generic;
 // Event class
 public class Event
 {
-    private string _type;
-    private string _eventTitle;
-    private string _description;
-    private date _eventDate;
-    private date _evnetTime;
-    private string _address;
-    
-    public Event(string type)
+    protected string _type;
+    protected string _eventTitle;
+    protected string _description;
+    protected string _eventDate;
+    protected string _eventTime;    
+    protected string _addresses;
+    Address _address; 
+
+    // Event Constructor
+    public Event(string type, string eventTitle, string description, string eventDate, string eventTime, Address address )
     {
-        
+        _type = type;
+        _eventTitle = eventTitle;
+        _description = description;
+        _eventDate = eventDate;
+        _eventTime = eventTime;
+        _address = address;
     }
 
-    public string StandardDetails()
-    {
-        return _eventTitle;
+    // Print Standard Details marketing messages
+    public virtual void StandardDetails()
+    {        
+        _addresses = _address.GetfieldAddress();
+        Console.WriteLine("");
+        Console.WriteLine($"Welcome to {_type}!");
+        Console.WriteLine($"Title : {_eventTitle}");
+        Console.WriteLine($"Description : {_description}");
+        Console.WriteLine($"Date : {_eventDate}");
+        Console.WriteLine($"Time : {_eventTime}");
+        Console.WriteLine($"Address : {_addresses}");       
     }  
 
-    public string FullDetails()
+    // Print Full Details marketing messages
+    public virtual void FullDetails()
     {
-        return _eventTitle;
+         _addresses = _address.GetfieldAddress();
+        Console.WriteLine("");
+        Console.WriteLine($"Welcome to {_type}!");
+        Console.WriteLine($"Title : {_eventTitle}");
+        Console.WriteLine($"Description : {_description}");
+        Console.WriteLine($"Date : {_eventDate}");
+        Console.WriteLine($"Time : {_eventTime}");
+        Console.WriteLine($"Address : {_addresses}");  
     }
 
-    public string FullDetails()
+    // Print Short description marketing messages
+    public virtual void ShortDescription()
     {
-        return _description;
+        Console.WriteLine("");
+        Console.WriteLine($"Welcome to {_type}!");
+        Console.WriteLine($"Title : {_eventTitle}");        
+        Console.WriteLine($"Date : {_eventDate}");       
     }
 
-
+ 
 }
