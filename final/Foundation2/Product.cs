@@ -9,6 +9,7 @@ public class Product
     private decimal _price; 
     private int _quantity;
   
+    // Constructor
     public Product(string name, string prodId, decimal price, int quantity)
     {
         _name = name;
@@ -17,21 +18,25 @@ public class Product
         _quantity = quantity;
     }  
 
+    // Get product name
     public string GetName()
     {
         return _name;
     }
-
+   
+    // Get product ID
     public string GetProductID()
     {
         return _prodId;
     }
-
+    
+    // Get Price
     public decimal GetPrice()
     {
         return _price;
     }
-
+   
+    // Get Quantity
     public int GetQuantity()
     {
         return _quantity;

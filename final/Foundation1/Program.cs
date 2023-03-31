@@ -15,6 +15,7 @@ class Program
         Menu menu = new Menu();                   
         List<Video> videos = new List<Video>();    
       
+        // Get selection of menu from users
         while ( userNum != 3 )
         {        
             // Display menu      
@@ -35,7 +36,7 @@ class Program
 
                 Video video = new Video(title, author, length); 
                               
-
+                // add comments
                 while(userComment.ToUpper() != "NO")
                 {
                     Console.WriteLine("");
